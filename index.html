@@ -1,34 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Likery - Collect and Explore Your Favorite Images</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Likery - Favorite Image Organizer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 2em auto;
+      padding: 0 1em;
+      color: #222;
+    }
+    h1 { color: #111; }
+    h2 { margin-top: 2em; }
+    ul { padding-left: 1.2em; }
+    a { color: #0066cc; }
+  </style>
 </head>
 <body>
   <h1>Welcome to Likery</h1>
-  <p><strong>Likery</strong> is a prototype app that helps users collect, organize, and discover favorite images from multiple social platforms, including <strong>Pinterest</strong>.</p>
 
-  <h2>🧩 What does Likery do?</h2>
+  <p><strong>Likery</strong> is a prototype application designed to help users view and organize their favorite images from multiple social platforms — including Pinterest — in one private, unified place.</p>
+
+  <h2>🛠 What Likery Does</h2>
   <ul>
-    <li>Connects to Pinterest to access users' saved Pins and Boards (with permission)</li>
-    <li>Displays all favorite images in one timeline-like interface</li>
-    <li>Uses AI to recommend similar images based on your collection</li>
+    <li>Lets users connect their Pinterest account using official API access (with full consent)</li>
+    <li>Displays authorized content (saved Pins) from Pinterest and other sources together</li>
+    <li>Helps users rediscover favorite images via simple filtering and organization features</li>
   </ul>
 
-  <h2>🔐 How we use Pinterest data</h2>
+  <h2>🔐 Data Usage and Privacy</h2>
   <p>
-    Likery requests only the minimum permissions necessary to display your saved Pins.<br>
-    No Pinterest data is stored on our servers. We do not share or sell any user data.
+    Likery uses only the minimum API permissions required to display your authorized content.
+    No Pinterest data is stored, shared, or processed on any external server. All data stays on the user’s device and is only shown while the session is active.
   </p>
 
-  <h2>📱 Screenshots</h2>
-  <p>Here are some sample screens from the prototype app:</p>
-  <img src="screenshots/ui_1.png" alt="Likery UI 1" width="300">
-  <img src="screenshots/ui_2.png" alt="Likery UI 2" width="300">
+  <p>
+    This project strictly complies with the Pinterest Developer Guidelines and is intended solely for personal, non-commercial use.
+  </p>
 
-  <h2>📜 Privacy Policy</h2>
-  <p><a href="privacy.html">View our privacy policy here</a></p>
+  <h2>🖼 App Preview (Prototype)</h2>
+  <p>Here are some early screenshots from the prototype version:</p>
+  <ul>
+    <li><img src="likery_ui_1.png" alt="Likery UI Screenshot 1" width="300"/></li>
+    <li><img src="likery_ui_2.png" alt="Likery UI Screenshot 2" width="300"/></li>
+  </ul>
 
-  <p><em>This is a prototype project under development.</em></p>
+  <h2>📄 Privacy Policy</h2>
+  <p><a href="privacy.html" target="_blank">View our privacy policy here</a></p>
+
+  <p><em>This is a prototype project under development and not affiliated with Pinterest.</em></p>
 </body>
 </html>
