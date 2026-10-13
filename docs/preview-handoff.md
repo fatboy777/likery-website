@@ -1,5 +1,107 @@
 # Coming Soon preview handoff
 
+## Current review: Mobile-aligned identity, 2026-10-13
+
+This section supersedes the historical dark-green/lime preview below. The
+approved direction is ivory/charcoal/coral. Composition, copy and all six
+original artwork SVGs are preserved.
+
+- Preview: <https://4a68eaed.likery-coming-soon.pages.dev/>.
+- Branch: `codex/coming-soon-cloudflare-pages`.
+- Deployed commit: `40f210e7e28f00c67ed4aaee7842eddbb102dcc8`.
+- Deployment ID: `4a68eaed-6f6d-45db-853f-98f98be06874`.
+- Continued website base: `62bf078e04637ec5adb1e9b9d6b49ac7d5502492`;
+  original common base: `78ce5414326e1ec6cfcc894e241633d806580be3`.
+- Shared data-contract version: not consumed; existing Mobile/Web contracts
+  remain unchanged. Mobile source inspected read-only at
+  `e3dcf57c6c34280494162b67e93e960b7efd2734`.
+- Shared reference: [brand-identity-v1.md](brand-identity-v1.md).
+
+### Brand decisions
+
+Background `#F8F7F4`, foreground `#25231F`, seed `#B85C5C`. Accessible small
+labels/links use Flutter-derived primary `#904A49`; hover uses `#733333`.
+Secondary text is `#6C625D`, neutral surface `#F0EDE8`, decorative border
+`#D7C1C0`, optional coral surface `#FFDAD8`. The seed has 4.15:1 contrast on
+ivory and is reserved for large text/marks. Primary, secondary and action text
+measure 14.64:1, 5.53:1 and 6.01:1 respectively.
+
+The five Android launcher assets match the stock Flutter template byte for
+byte. The in-app mark is a generic Material bookmark. Source/history provides
+no conflicting approved custom launcher identity. Recommend the existing
+L + dot geometry in coral, with outlined Inter wordmarks and light/dark symbol
+variants. Native icon changes require a separate approved Mobile task.
+
+Inter is self-hosted, OFL-licensed, 100–900 variable weight; this site uses
+400/500/600 and outlined 700. One 344 KiB WOFF2 is preloaded with swap fallback.
+Japanese uses installed platform sans-serif fallbacks. Native Android/iOS
+readability, Japanese metrics and text scaling remain rollout checks; no device
+or ADB access was used.
+
+### Current validation
+
+`npm test`: 3/3 passed. `npm run build`: 19 allowlisted static files, including
+the font/license and four logo masters. The old root pages and development
+sources are excluded. The original six artworks and root historical HTML are
+unchanged in Git.
+
+Local real HTTP/browser checks passed at 320/390/768/1440: no horizontal
+overflow, seven loaded images (logo plus six artworks), Inter available,
+no home-page console warnings/errors. A separate font-failure HTTP fixture
+verified readable fallback, intact outlined logos and no overflow at every
+width. A local specimen checked the logo variants, 16/32px favicon, font
+weights and Japanese fallback. Keyboard checks reached visible skip/action
+focus, focused main, and navigated to `#idea`. The custom 404 returned home.
+The browser computed auto scrolling and no link transition under its active
+reduced-motion setting; both OS preferences could not be forced separately.
+
+Cloudflare confirmed successful clone/build/deploy, `environment: preview`,
+the intended branch/commit, and `uses_functions: false`. Push did not trigger
+a build during observation, so the existing authorized branch was built with
+an explicit multipart preview request. No project settings were changed.
+
+All 18 HTTP-addressable output files matched local content (text line endings
+normalized; font/PNG byte-identical); the nineteenth file is the `_headers`
+configuration, which correctly remains inaccessible. Eight legacy, missing,
+application and source paths returned the exact custom 404 with HTTP 404.
+The branch alias matched the current homepage. CSP, noindex and security
+headers were verified; dependencies are same-origin with no scripts/forms.
+
+The deployed page passed the same four actual browser widths: no overflow,
+seven images loaded, Inter available, and no homepage console errors/warnings.
+Document widths matched local results (305/375/753/1425, excluding scrollbar).
+The remote 404 return link restored the homepage. Desktop/mobile screenshots
+and all HTTP/browser evidence are stored outside Git in the chat's local
+`likery-brand-review` artifact directory.
+
+Protected Worker ETags/timestamps, Worker routes and the unrelated `pdf-review`
+project snapshot remained unchanged. Production auto-deploy stays disabled;
+custom domains remain absent and `likery.app` remains disconnected. No DNS
+write was made. Existing OAuth scope cannot list zone DNS records, so a
+record-by-record comparison was unavailable and permissions were not expanded.
+The Mobile checkout remains clean. `main` has not been merged or updated.
+
+### Changed files in this refinement
+
+`README.md`, `docs/brand-identity-v1.md`, `docs/preview-handoff.md`,
+`public/index.html`, `public/404.html`, `public/styles.css`,
+`public/assets/favicon.svg`, `public/assets/social.png`,
+`public/assets/logo-{wordmark,symbol}-{light,dark}.svg`,
+`public/fonts/InterVariable-v4.1.woff2`, `public/fonts/Inter-OFL.txt`,
+`scripts/build.mjs`, `scripts/serve.mjs`, `scripts/brand-assets.py`,
+`tests/site.test.mjs`, `brand/README.md`, `brand/social.svg`.
+
+### Review gate and remaining decisions
+
+Await explicit human approval of the unified logo/typography and website
+preview. Do not merge `main`, connect `likery.app`, or modify Mobile here.
+The font's 344 KiB first-load cost is documented; subsetting can be considered
+in a separate optimization. Canonical/social metadata names the future domain,
+so social-crawler fetching there remains unavailable until domain approval.
+This documentation-only follow-up uses `[skip ci]` to retain the tested build.
+
+## Historical initial preview (superseded brand direction)
+
 Date: 2026-10-13 (Asia/Tokyo).
 
 Repository: `fatboy777/likery-website`. Dedicated checkout:
