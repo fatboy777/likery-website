@@ -6,7 +6,7 @@ six original illustrations are explicitly conceptual. Brand colors follow Mobile
 warm ivory/charcoal/coral direction. Inter v4.1 is self-hosted with its OFL license;
 no external scripts, fonts or image requests are required.
 
-See [the proposed unified brand specification](docs/brand-identity-v1.md) and
+See [the approved unified brand specification](docs/brand-identity-v1.md) and
 [brand asset sources](brand/README.md). Mobile code and launcher assets are not
 modified by this website task.
 
@@ -32,22 +32,24 @@ product or privacy claims. No replacement legal policy has been authored.
 
 Cloudflare Pages target: `likery-coming-soon`, GitHub repository:
 `fatboy777/likery-website`, build command: `npm run build`, output: `dist`.
-Use `main` as the reserved production branch with automatic production builds
-disabled until an approved site replaces the historical source. Preview builds
+Use `main` as the production branch. Automatic production builds remain
+disabled; production releases use an explicitly controlled build. Preview builds
 should be restricted to `codex/coming-soon-cloudflare-pages`.
 No environment variables, Functions, bindings, storage, external requests, or
-custom domains are needed. Do not enable Web Analytics or add a Worker.
+additional custom domains are needed. Do not enable Web Analytics or add a Worker.
 
 The existing `likery-oauth` and `likery-publication-dev` Workers must remain
-untouched. Do not modify other Pages projects or any domain/DNS routing.
+untouched. Do not modify other Pages projects or routing outside the approved
+website's `likery.app` / `www.likery.app` scope.
 
-## Human approval gate
+## Approved initial production launch
 
-**Stop after Pages preview validation.** Connecting `likery.app`, provisioning
-its DNS/certificate, or configuring `www` requires explicit subsequent human
-approval. Canonical and social URLs express the intended final domain; metadata
-does not attach it. Until approval, social image URLs on the final domain are
-not expected to resolve.
+Human approval on 2026-10-13 authorized the reviewed Coming Soon identity,
+integration into `main`, production deployment and the two website domains.
+Public URL: <https://likery.app/>. `www` redirects to the apex over HTTPS.
+See [the production launch record](docs/production-launch.md) for deployment,
+DNS/certificate checks and remaining operational notices. Mobile implementation
+and application infrastructure require separate approval.
 
 The website has no dependency on SavedItem or publication contracts. Baseline:
 `78ce5414326e1ec6cfcc894e241633d806580be3` (`origin/main`, verified before work).

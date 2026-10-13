@@ -1,5 +1,10 @@
 # Coming Soon preview handoff
 
+The initial production launch was subsequently approved and completed on
+2026-10-13. See [production-launch.md](production-launch.md) for current public
+hosting and operational status. Review gates below describe the historical
+preview checkpoints, not the current launch authorization.
+
 ## Current review: Mobile-aligned identity, 2026-10-13
 
 This section supersedes the historical dark-green/lime preview below. The

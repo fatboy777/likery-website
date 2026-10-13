@@ -1,8 +1,9 @@
 # Likery brand identity v1
 
-Status: proposed shared reference, 2026-10-13. The Mobile-aligned color direction
-is approved. This website implementation, the L + dot logo system and the shared
-typography specification await human visual approval before wider adoption.
+Status: approved for the initial public Coming Soon launch, 2026-10-13. Human
+approval covers the Mobile-aligned colors, website, L + dot logo and typography.
+This is the shared reference for future adoption; implementation in Mobile
+remains a separate approved task.
 
 Owner/scope: dedicated `fatboy777/likery-website` repository. Website base:
 `62bf078e04637ec5adb1e9b9d6b49ac7d5502492`, continuing from the original common
@@ -296,4 +297,5 @@ Regenerate assets with `scripts/brand-assets.py` after changing approved tokens 
 geometry; see `brand/README.md`. Review the homepage, 404, favicon, all logo
 variants and social card together. This document is the proposed common
 reference; future Mobile integration needs its own coordinated approval and
-implementation. Production domain connection remains separately gated.
+implementation. The production website/domain launch is separately authorized
+and its verified state is recorded in `production-launch.md`.
