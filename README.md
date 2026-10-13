@@ -1,9 +1,14 @@
 # Likery Coming Soon
 
 A standalone, static marketing website. It does not contain the Likery application,
-account features, data collection, provider integrations, or analytics. All visual
-artwork in `public/assets/` was created for this site; no third-party assets or
-remote fonts are required. The wall is explicitly a concept illustration.
+account features, data collection, provider integrations, or analytics. The wall's
+six original illustrations are explicitly conceptual. Brand colors follow Mobile's
+warm ivory/charcoal/coral direction. Inter v4.1 is self-hosted with its OFL license;
+no external scripts, fonts or image requests are required.
+
+See [the proposed unified brand specification](docs/brand-identity-v1.md) and
+[brand asset sources](brand/README.md). Mobile code and launcher assets are not
+modified by this website task.
 
 ## Local development
 

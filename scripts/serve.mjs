@@ -4,8 +4,8 @@ import { resolve, extname, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('../dist/', import.meta.url));
-const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.txt': 'text/plain; charset=utf-8' };
-const allowed = new Set(['index.html','404.html','styles.css','robots.txt','assets/favicon.svg','assets/terrace.svg','assets/bloom.svg','assets/orbit.svg','assets/coast.svg','assets/studio.svg','assets/ripple.svg','assets/social.png']);
+const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.txt': 'text/plain; charset=utf-8', '.woff2': 'font/woff2' };
+const allowed = new Set(['index.html','404.html','styles.css','robots.txt','assets/favicon.svg','assets/terrace.svg','assets/bloom.svg','assets/orbit.svg','assets/coast.svg','assets/studio.svg','assets/ripple.svg','assets/social.png','assets/logo-symbol-light.svg','assets/logo-symbol-dark.svg','assets/logo-wordmark-light.svg','assets/logo-wordmark-dark.svg','fonts/InterVariable-v4.1.woff2','fonts/Inter-OFL.txt']);
 export const server = createServer(async (request, response) => {
   let body;
   let status = 200;

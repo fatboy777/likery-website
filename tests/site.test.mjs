@@ -10,8 +10,9 @@ before(async () => {
 after(() => new Promise(resolve => server.close(resolve)));
 
 test('deployment contains only the reviewed static surface', async () => {
-  assert.deepEqual((await readdir(new URL('../dist/', import.meta.url))).sort(), ['404.html','_headers','assets','index.html','robots.txt','styles.css']);
-  assert.deepEqual((await readdir(new URL('../dist/assets/', import.meta.url))).sort(), ['bloom.svg','coast.svg','favicon.svg','orbit.svg','ripple.svg','social.png','studio.svg','terrace.svg']);
+  assert.deepEqual((await readdir(new URL('../dist/', import.meta.url))).sort(), ['404.html','_headers','assets','fonts','index.html','robots.txt','styles.css']);
+  assert.deepEqual((await readdir(new URL('../dist/assets/', import.meta.url))).sort(), ['bloom.svg','coast.svg','favicon.svg','logo-symbol-dark.svg','logo-symbol-light.svg','logo-wordmark-dark.svg','logo-wordmark-light.svg','orbit.svg','ripple.svg','social.png','studio.svg','terrace.svg']);
+  assert.deepEqual((await readdir(new URL('../dist/fonts/', import.meta.url))).sort(), ['Inter-OFL.txt','InterVariable-v4.1.woff2']);
   const html = await readFile(new URL('../dist/index.html', import.meta.url), 'utf8');
   assert.equal((html.match(/<h1\b/g) ?? []).length, 1);
   assert.match(html, /Coming soon/i);
@@ -38,6 +39,12 @@ test('homepage, local assets, fragment links and social image resolve', async ()
   const social = await fetch(base + '/assets/social.png');
   assert.equal(social.status, 200);
   assert.equal(social.headers.get('content-type'), 'image/png');
+  const font = await fetch(base + '/fonts/InterVariable-v4.1.woff2');
+  assert.equal(font.status, 200);
+  assert.equal(font.headers.get('content-type'), 'font/woff2');
+  assert.equal(Buffer.from(await font.arrayBuffer()).subarray(0, 4).toString(), 'wOF2');
+  const license = await fetch(base + '/fonts/Inter-OFL.txt');
+  assert.match(await license.text(), /SIL OPEN FONT LICENSE Version 1.1/);
 });
 
 test('legacy, application, missing and traversal paths produce an actual 404', async () => {
